@@ -23,7 +23,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push ansible530/iccpnew:$BUILD_NUMBER'
+                sh 'docker push iccpinfotech/iccpnew:$BUILD_NUMBER'
             }
         }
 }
