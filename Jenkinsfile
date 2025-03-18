@@ -2,7 +2,7 @@
 pipeline {
     agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('iccp-dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials('ansible530')
     }
     stages { 
         stage('SCM Checkout') {
@@ -13,7 +13,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t iccpinfotech/iccpnew:$BUILD_NUMBER .'
+                sh 'docker build -t ansible50/iccpnew:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push iccpinfotech/iccpnew:$BUILD_NUMBER'
+                sh 'docker push ansible530/iccpnew:$BUILD_NUMBER'
             }
         }
 }
