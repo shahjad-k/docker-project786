@@ -13,7 +13,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t ansible50/nginx-web:$BUILD_NUMBER .'
+                sh 'docker build -t ansible50/nginx-web12:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push ansible530/nginx-web:$BUILD_NUMBER'
+                sh 'docker push ansible530/nginx-web12:$BUILD_NUMBER'
             }
         }
 }
